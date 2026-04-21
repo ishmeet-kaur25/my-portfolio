@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ishmeet Kaur | Full-Stack Developer & AI Enthusiast</title>
+  <title>Ishmeet Kaur | Full-Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -162,11 +162,11 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-size: clamp(3rem, 6vw, 5rem);
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -2px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .hero h1 .name {
@@ -174,6 +174,31 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+    }
+
+    /* NEW: Expertise Fields */
+    .expertise-fields {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .expertise-field {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(96,165,250,0.08);
+      border: 1px solid rgba(96,165,250,0.2);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--blue);
+      letter-spacing: 0.02em;
+    }
+
+    .expertise-field i {
+      font-size: 0.8rem;
     }
 
     .hero-subtitle {
@@ -1037,6 +1062,7 @@
       .hero-right { display: none; }
       .hero-stats { justify-content: center; }
       .hero-btns { justify-content: center; }
+      .expertise-fields { justify-content: center; }
       .about-grid { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       .education-grid { grid-template-columns: 1fr; }
@@ -1077,7 +1103,7 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO - UPDATED WITH BIG NAME AND EXPERTISE FIELDS -->
   <section id="home" class="hero">
     <div class="hero-inner">
       <div class="hero-left">
@@ -1086,10 +1112,14 @@
           Open for internships & opportunities
         </div>
         <h1>
-          Hi, I'm<br>
-          <span class="name">Ishmeet Kaur</span><br>
-          Full-Stack Dev<br>& AI Enthusiast
+          <span class="name">Ishmeet Kaur</span>
         </h1>
+        <!-- NEW: Expertise Fields -->
+        <div class="expertise-fields">
+          <span class="expertise-field"><i class="fas fa-layer-group"></i> Full Stack Development</span>
+          <span class="expertise-field"><i class="fas fa-database"></i> Database Administration</span>
+          <span class="expertise-field"><i class="fas fa-brain"></i> Prompt Engineering</span>
+        </div>
         <p class="hero-subtitle">
           B.Tech CS student (2024-2028) building production-ready web apps with AI capabilities. From 2D/3D planners to business management systems — I ship things that work.
         </p>
@@ -1404,7 +1434,7 @@
     </div>
   </section>
 
-  <!-- CONTACT WITH WORKING WHATSAPP & EMAIL -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="section-header reveal">
