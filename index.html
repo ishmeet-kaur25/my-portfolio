@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Ishmeet Kaur | Full-Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -57,7 +57,7 @@
       background-size: 60px 60px;
     }
 
-    /* CURSOR GLOW */
+    /* CURSOR GLOW - hidden on mobile */
     #cursor-glow {
       position: fixed;
       width: 500px;
@@ -70,7 +70,7 @@
       transition: transform 0.08s linear;
     }
 
-    /* ===== NAV ===== */
+    /* ===== NAV - FIXED FOR MOBILE ===== */
     nav {
       position: fixed;
       top: 0;
@@ -96,6 +96,7 @@
       letter-spacing: -1px;
     }
 
+    /* Desktop navigation */
     .nav-links {
       display: flex;
       gap: 2rem;
@@ -109,9 +110,21 @@
       font-weight: 500;
       transition: color 0.2s;
       letter-spacing: 0.03em;
+      white-space: nowrap;
     }
 
     .nav-links a:hover { color: #fff; }
+
+    /* Mobile menu button (hamburger) */
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
 
     /* ===== HERO ===== */
     .hero {
@@ -162,7 +175,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
+      font-size: clamp(2.5rem, 6vw, 5rem);
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -2px;
@@ -176,7 +189,7 @@
       color: transparent;
     }
 
-    /* NEW: Expertise Fields */
+    /* Expertise Fields */
     .expertise-fields {
       display: flex;
       flex-wrap: wrap;
@@ -214,8 +227,6 @@
       gap: 2rem;
       margin-bottom: 2rem;
     }
-
-    .hero-stat {}
 
     .hero-stat .num {
       font-family: 'Syne', sans-serif;
@@ -366,7 +377,8 @@
     }
 
     .quick-link {
-      width: 38px; height: 38px;
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
       background: var(--bg3);
       border: 1px solid var(--border);
@@ -407,7 +419,7 @@
 
     .section-title {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       font-weight: 800;
       letter-spacing: -1px;
     }
@@ -449,6 +461,7 @@
       display: flex;
       gap: 1rem;
       margin-top: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .highlight-pill {
@@ -533,7 +546,8 @@
       position: absolute;
       left: -2.5rem;
       top: 0.3rem;
-      width: 16px; height: 16px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--blue), var(--purple));
       border: 2px solid var(--bg);
@@ -611,7 +625,6 @@
       content: '▹';
       color: var(--blue);
       flex-shrink: 0;
-      margin-top: 0.05rem;
     }
 
     .timeline-tech {
@@ -646,7 +659,8 @@
     }
 
     .skill-block-icon {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border-radius: 9px;
       display: flex;
       align-items: center;
@@ -699,7 +713,6 @@
     .fill-pink { background: linear-gradient(90deg, #be185d, #ec4899); }
     .fill-green { background: linear-gradient(90deg, #15803d, #4ade80); }
 
-    /* Tools Grid */
     .tools-grid {
       display: flex;
       flex-wrap: wrap;
@@ -866,7 +879,8 @@
     .edu-card:hover { border-color: rgba(96,165,250,0.25); }
 
     .edu-icon {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -916,7 +930,8 @@
     .cert-card:hover { border-color: rgba(96,165,250,0.25); }
 
     .cert-icon {
-      width: 40px; height: 40px;
+      width: 40px;
+      height: 40px;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -980,7 +995,7 @@
 
     .contact-left h3 {
       font-family: 'Syne', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 1rem;
@@ -1023,7 +1038,8 @@
     }
 
     .contact-card-icon {
-      width: 38px; height: 38px;
+      width: 38px;
+      height: 38px;
       border-radius: 9px;
       display: flex;
       align-items: center;
@@ -1051,27 +1067,7 @@
 
     footer .footer-heart { color: var(--pink); }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
-      .skills-layout { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-right { display: none; }
-      .hero-stats { justify-content: center; }
-      .hero-btns { justify-content: center; }
-      .expertise-fields { justify-content: center; }
-      .about-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .education-grid { grid-template-columns: 1fr; }
-      .cert-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .nav-links { gap: 1rem; }
-    }
-
-    /* Scroll animation */
+    /* ===== SCROLL ANIMATION ===== */
     .reveal {
       opacity: 0;
       transform: translateY(20px);
@@ -1082,6 +1078,201 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ===== RESPONSIVE DESIGN - FIXED NAVIGATION ===== */
+    @media (max-width: 1024px) {
+      .projects-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+      }
+      .skills-layout { 
+        grid-template-columns: 1fr; 
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Hide cursor glow on mobile */
+      #cursor-glow {
+        display: none;
+      }
+      
+      /* Show hamburger menu button */
+      .menu-btn {
+        display: block;
+      }
+      
+      /* Hide nav links by default on mobile */
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 250px;
+        height: 100vh;
+        background: rgba(7,7,17,0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        border-left: 1px solid var(--border);
+      }
+      
+      .nav-links.active {
+        right: 0;
+      }
+      
+      .nav-links a {
+        font-size: 1.1rem;
+      }
+      
+      /* Fix hero section */
+      .hero-inner { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 2rem;
+      }
+      .hero-right { 
+        display: none; 
+      }
+      .hero-stats { 
+        justify-content: center; 
+      }
+      .hero-btns { 
+        justify-content: center; 
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-btns .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+      }
+      .expertise-fields { 
+        justify-content: center; 
+      }
+      
+      /* Fix about section */
+      .about-grid { 
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+      }
+      
+      /* Fix projects */
+      .projects-grid { 
+        grid-template-columns: 1fr; 
+      }
+      
+      /* Fix education */
+      .education-grid { 
+        grid-template-columns: 1fr; 
+      }
+      
+      /* Fix certifications */
+      .cert-grid { 
+        grid-template-columns: 1fr; 
+      }
+      
+      /* Fix contact */
+      .contact-grid { 
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+      }
+      
+      /* Fix timeline on mobile */
+      .timeline {
+        padding-left: 1rem;
+      }
+      .timeline::before {
+        left: 0;
+      }
+      .timeline-dot {
+        left: -1.2rem;
+      }
+      .timeline-card {
+        padding: 1rem;
+      }
+      .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      /* Fix section padding */
+      section {
+        padding: 3rem 4%;
+      }
+      .hero {
+        padding: 5rem 4% 3rem;
+      }
+      
+      /* Fix text sizes */
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .contact-left h3 {
+        font-size: 1.3rem;
+      }
+      
+      /* Fix buttons on mobile */
+      .contact-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+      .contact-buttons .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      /* Fix footer */
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      /* Fix project features on mobile */
+      .project-features {
+        display: none;
+      }
+      
+      /* Fix timeline points */
+      .timeline-points li {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* For very small phones */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .expertise-fields {
+        flex-direction: column;
+        align-items: center;
+      }
+      .expertise-field {
+        width: fit-content;
+      }
+      .hero-stats {
+        gap: 1rem;
+      }
+      .hero-stat .num {
+        font-size: 1.2rem;
+      }
+      .hero-stat .label {
+        font-size: 0.6rem;
+      }
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .divider {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1089,21 +1280,24 @@
   <div class="grid-lines"></div>
   <div id="cursor-glow"></div>
 
-  <!-- NAV -->
+  <!-- NAV - FIXED WITH HAMBURGER MENU -->
   <nav>
     <div class="logo">IK</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <button class="menu-btn" id="menuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#education" onclick="closeMenu()">Education</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HERO - UPDATED WITH BIG NAME AND EXPERTISE FIELDS -->
+  <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-inner">
       <div class="hero-left">
@@ -1114,7 +1308,6 @@
         <h1>
           <span class="name">Ishmeet Kaur</span>
         </h1>
-        <!-- NEW: Expertise Fields -->
         <div class="expertise-fields">
           <span class="expertise-field"><i class="fas fa-layer-group"></i> Full Stack Development</span>
           <span class="expertise-field"><i class="fas fa-database"></i> Database Administration</span>
@@ -1236,7 +1429,7 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE TIMELINE -->
+  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="container">
       <div class="section-header reveal">
@@ -1500,8 +1693,41 @@
   </footer>
 
   <script>
+    // Mobile menu functionality
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    function toggleMenu() {
+      navLinks.classList.toggle('active');
+      const icon = menuBtn.querySelector('i');
+      if(icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    }
+    
+    function closeMenu() {
+      navLinks.classList.remove('active');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+    
+    menuBtn.addEventListener('click', toggleMenu);
+    
+    // Disable cursor glow on mobile
+    if(window.innerWidth <= 768) {
+      document.getElementById('cursor-glow').style.display = 'none';
+    }
+    
     document.addEventListener('mousemove', (e) => {
-      document.getElementById('cursor-glow').style.transform = `translate(${e.clientX - 250}px, ${e.clientY - 250}px)`;
+      const glow = document.getElementById('cursor-glow');
+      if(glow && glow.style.display !== 'none') {
+        glow.style.transform = `translate(${e.clientX - 250}px, ${e.clientY - 250}px)`;
+      }
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(a => {
